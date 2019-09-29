@@ -181,4 +181,12 @@ public class LengthTest {
 
         assertEquals(new Length(4,Unit.INCH),twoInches.add(twoInches));
     }
+
+    @Test
+    void givenZeroFootAndZeroFoot_WhenAdd_ThenShouldBeZeroFoot() {
+        Length zeroFoot = new Length(0, Unit.FOOT);
+
+        assertEquals(new Length(0,Unit.FOOT),zeroFoot.add(zeroFoot));
+    }
+
 }

@@ -21,4 +21,9 @@ public class Length {
         }
         return false;
     }
+
+    public double add(Length zeroFoot) {
+        return 0;
+    }
 }
+

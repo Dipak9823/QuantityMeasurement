@@ -146,9 +146,17 @@ public class LengthTest {
         @Test
         void givenOneYardAndTwoYard_whenEquals_thenShouldBeNotEqual(){
             Length oneYard = new Length(1, Unit.YARD);
-            Length anotherOneYard = new Length(2, Unit.YARD);
+            Length twoYard = new Length(2, Unit.YARD);
 
-            assertNotEquals(oneYard,anotherOneYard);
+            assertNotEquals(oneYard,twoYard);
+        }
+
+        @Test
+        void givenOneYardAndThreeFoot_whenEquals_thenShouldBeNotEqual(){
+            Length oneYard = new Length(1, Unit.YARD);
+            Length threeFoot = new Length(3, Unit.FOOT);
+
+            assertEquals(oneYard,threeFoot);
         }
     }
 }

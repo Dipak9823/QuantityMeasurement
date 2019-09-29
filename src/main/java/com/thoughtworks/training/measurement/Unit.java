@@ -1,7 +1,7 @@
 package com.thoughtworks.training.measurement;
 
 public enum Unit {
-    INCH(1), FOOT(12), YARD(1);
+    INCH(1), FOOT(12), YARD(36);
 
     private double conversionFactor;
 

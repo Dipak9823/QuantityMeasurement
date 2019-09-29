@@ -226,5 +226,15 @@ public class LengthTest {
         assertEquals(new Length(2, Unit.GALLON), oneGallon.add(oneGallon));
     }
 
+    @Test
+    void givenOneGallonAndOneLiter_WhenAdd_ThenShouldBeFourPointSevenEightLiters() {
+        Length oneGallon = new Length(1, Unit.GALLON);
+        Length oneLiter = new Length(1, Unit.LITER);
+
+
+        assertEquals(new Length(4.779999999999999, Unit.LITER), oneGallon.add(oneLiter));
+    }
+
+
 
 }

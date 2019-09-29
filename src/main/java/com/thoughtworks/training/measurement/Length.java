@@ -23,7 +23,18 @@ public class Length {
     }
 
     public Length add(Length other) {
+        if(unit==Unit.GALLON||unit==Unit.LITER)
+            return new Length(unit.conversionToBase(value)+ other.unit.conversionToBase(other.value), Unit.LITER);
+
         return new Length(unit.conversionToBase(value)+ other.unit.conversionToBase(other.value), Unit.INCH);
+    }
+
+    @Override
+    public String toString() {
+        return "Length{" +
+                "value=" + value +
+                ", unit=" + unit +
+                '}';
     }
 }
 

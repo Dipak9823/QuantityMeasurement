@@ -1,5 +1,6 @@
 package com.thoughtworks.training.measurement;
 
+import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -130,5 +131,17 @@ public class LengthTest {
         Length oneFoot = new Length(1, Unit.FOOT);
 
         assertTrue(twelveInch.equals(oneFoot));
+    }
+
+    @Nested
+    class YardTest{
+        @Test
+        void givenZeroYardAndZeroYard_whenEquals_thenShouldBeEqual(){
+            Length zeroYard = new Length(0, Unit.YARD);
+            Length anotherZeroYard = new Length(0, Unit.YARD);
+
+            assertEquals(zeroYard,anotherZeroYard);
+        }
+
     }
 }

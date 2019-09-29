@@ -203,4 +203,19 @@ public class LengthTest {
 
         assertEquals(new Length(14, Unit.INCH), oneFoot.add(twoInches));
     }
+
+    @Test
+    void givenTwoInchesAndOneFoot_WhenAdd_ThenShouldBeFourteenInches() {
+        Length oneFoot = new Length(1, Unit.FOOT);
+        Length twoInches = new Length(2, Unit.INCH);
+
+        assertEquals(new Length(14, Unit.INCH), twoInches.add(oneFoot));
+    }
+
+    @Test
+    void givenZeroLiterAndZeroLiter_WhenAdd_ThenShouldBeZeroLiter() {
+        Length zeroLiter = new Length(0, Unit.LITER);
+
+        assertEquals(new Length(0, Unit.LITER), zeroLiter.add(zeroLiter));
+    }
 }

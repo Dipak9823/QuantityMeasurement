@@ -23,9 +23,7 @@ public class Length {
     }
 
     public Length add(Length other) {
-        if (this.unit == Unit.FOOT && other.unit==Unit.FOOT)
-            return new Length(value + other.value, Unit.FOOT);
-        return new Length(unit.conversionToBase(value)+ other.value, Unit.INCH);
+        return new Length(unit.conversionToBase(value)+ other.unit.conversionToBase(other.value), Unit.INCH);
     }
 }
 

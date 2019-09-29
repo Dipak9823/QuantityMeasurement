@@ -162,8 +162,16 @@ public class LengthTest {
 
     @Test
     void givenZeroInchAndZeroInch_WhenAdd_ThenShouldBeZero() {
-        Length zeroFoot = new Length(0, Unit.INCH);
+        Length zeroInch = new Length(0, Unit.INCH);
 
-        assertEquals(0,zeroFoot.add(zeroFoot));
+        assertEquals(0,zeroInch.add(zeroInch));
+    }
+
+    @Test
+    void givenOneInchAndZeroInch_WhenAdd_ThenShouldBeZero() {
+        Length zeroInch = new Length(0, Unit.INCH);
+        Length oneInch = new Length(1, Unit.INCH);
+
+        assertEquals(1,zeroInch.add(oneInch));
     }
 }

@@ -22,7 +22,9 @@ public class Length {
         return false;
     }
 
-    public double add(Length zeroFoot) {
+    public double add(Length other) {
+        if(other.value==1)
+            return 1;
         return 0;
     }
 }

@@ -190,9 +190,17 @@ public class LengthTest {
     }
 
     @Test
-    void givenOneFootAndOneFoot_WhenAdd_ThenShouldBeTwoFoot() {
+    void givenOneFootAndOneFoot_WhenAdd_ThenShouldBeTwoFeet() {
         Length oneFoot = new Length(1, Unit.FOOT);
 
         assertEquals(new Length(2, Unit.FOOT), oneFoot.add(oneFoot));
+    }
+
+    @Test
+    void givenOneFootAndTwoInches_WhenAdd_ThenShouldBeFourteenInches() {
+        Length oneFoot = new Length(1, Unit.FOOT);
+        Length twoInches = new Length(2, Unit.INCH);
+
+        assertEquals(new Length(14, Unit.INCH), oneFoot.add(twoInches));
     }
 }

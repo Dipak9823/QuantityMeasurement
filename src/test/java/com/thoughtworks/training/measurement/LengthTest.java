@@ -134,29 +134,29 @@ public class LengthTest {
     }
 
     @Nested
-    class YardTest{
+    class YardTest {
         @Test
-        void givenZeroYardAndZeroYard_whenEquals_thenShouldBeEqual(){
+        void givenZeroYardAndZeroYard_whenEquals_thenShouldBeEqual() {
             Length zeroYard = new Length(0, Unit.YARD);
             Length anotherZeroYard = new Length(0, Unit.YARD);
 
-            assertEquals(zeroYard,anotherZeroYard);
+            assertEquals(zeroYard, anotherZeroYard);
         }
 
         @Test
-        void givenOneYardAndTwoYard_whenEquals_thenShouldBeNotEqual(){
+        void givenOneYardAndTwoYard_whenEquals_thenShouldBeNotEqual() {
             Length oneYard = new Length(1, Unit.YARD);
             Length twoYard = new Length(2, Unit.YARD);
 
-            assertNotEquals(oneYard,twoYard);
+            assertNotEquals(oneYard, twoYard);
         }
 
         @Test
-        void givenOneYardAndThreeFoot_whenEquals_thenShouldBeNotEqual(){
+        void givenOneYardAndThreeFoot_whenEquals_thenShouldBeNotEqual() {
             Length oneYard = new Length(1, Unit.YARD);
             Length threeFoot = new Length(3, Unit.FOOT);
 
-            assertEquals(oneYard,threeFoot);
+            assertEquals(oneYard, threeFoot);
         }
     }
 
@@ -164,7 +164,7 @@ public class LengthTest {
     void givenZeroInchAndZeroInch_WhenAdd_ThenShouldBeZero() {
         Length zeroInch = new Length(0, Unit.INCH);
 
-        assertEquals(new Length(0,Unit.INCH),zeroInch.add(zeroInch));
+        assertEquals(new Length(0, Unit.INCH), zeroInch.add(zeroInch));
     }
 
     @Test
@@ -172,21 +172,27 @@ public class LengthTest {
         Length zeroInch = new Length(0, Unit.INCH);
         Length oneInch = new Length(1, Unit.INCH);
 
-        assertEquals(new Length(1,Unit.INCH),zeroInch.add(oneInch));
+        assertEquals(new Length(1, Unit.INCH), zeroInch.add(oneInch));
     }
 
     @Test
     void givenTwoInchAndTwoInch_WhenAdd_ThenShouldBeFour() {
         Length twoInches = new Length(2, Unit.INCH);
 
-        assertEquals(new Length(4,Unit.INCH),twoInches.add(twoInches));
+        assertEquals(new Length(4, Unit.INCH), twoInches.add(twoInches));
     }
 
     @Test
     void givenZeroFootAndZeroFoot_WhenAdd_ThenShouldBeZeroFoot() {
         Length zeroFoot = new Length(0, Unit.FOOT);
 
-        assertEquals(new Length(0,Unit.FOOT),zeroFoot.add(zeroFoot));
+        assertEquals(new Length(0, Unit.FOOT), zeroFoot.add(zeroFoot));
     }
 
+    @Test
+    void givenOneFootAndOneFoot_WhenAdd_ThenShouldBeTwoFoot() {
+        Length oneFoot = new Length(1, Unit.FOOT);
+
+        assertEquals(new Length(2, Unit.FOOT), oneFoot.add(oneFoot));
+    }
 }

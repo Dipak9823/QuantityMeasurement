@@ -23,9 +23,9 @@ public class Length {
     }
 
     public Length add(Length other) {
-        if(this.unit==Unit.FOOT)
-            return new Length(0,Unit.FOOT);
-        return new Length(value+other.value,Unit.INCH);
+        if (this.unit == Unit.FOOT)
+            return new Length(value + other.value, Unit.FOOT);
+        return new Length(value + other.value, Unit.INCH);
     }
 }
 

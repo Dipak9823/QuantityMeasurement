@@ -1,10 +1,10 @@
 package com.thoughtworks.training.measurement;
 
-public class Length {
+public class Quantity {
     private final double value;
     private final Unit unit;
 
-    public Length(double value, Unit unit) {
+    public Quantity(double value, Unit unit) {
         this.value = value;
         this.unit = unit;
     }
@@ -15,23 +15,23 @@ public class Length {
             return true;
         }
 
-        if (other instanceof Length) {
-            Length that = (Length) other;
+        if (other instanceof Quantity) {
+            Quantity that = (Quantity) other;
 
             return this.unit.conversionToBase(this.value) == that.unit.conversionToBase(that.value);
         }
         return false;
     }
 
-    public Length add(Length other) {
+    public Quantity add(Quantity other) {
 
         if (this.unit == Unit.FOOT && other.unit == Unit.LITER) {
             throw new IllegalArgumentException("unit are not of same type");
         }
         if (unit == Unit.GALLON || unit == Unit.LITER)
-            return new Length(unit.conversionToBase(value) + other.unit.conversionToBase(other.value), Unit.LITER);
+            return new Quantity(unit.conversionToBase(value) + other.unit.conversionToBase(other.value), Unit.LITER);
 
-        return new Length(unit.conversionToBase(value) + other.unit.conversionToBase(other.value), Unit.INCH);
+        return new Quantity(unit.conversionToBase(value) + other.unit.conversionToBase(other.value), Unit.INCH);
     }
 
     @Override

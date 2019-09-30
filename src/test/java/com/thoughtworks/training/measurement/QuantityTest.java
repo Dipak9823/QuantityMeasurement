@@ -302,4 +302,5 @@ public class QuantityTest {
 
         assertFalse(oneInch.equals(oneLiter));
     }
+
 }

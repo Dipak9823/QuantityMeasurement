@@ -18,32 +18,24 @@ public class Quantity {
         if (other instanceof Quantity) {
             Quantity that = (Quantity) other;
 
-            if(this.unit == Unit.INCH && that.unit == Unit.LITER){
+            if (this.unit == Unit.INCH && that.unit == Unit.LITER) {
                 return false;
             }
-            return this.unit.conversionToBase(this.value) == that.unit.conversionToBase(that.value);
+
+            if ((this.unit == Unit.GALLON || this.unit == Unit.LITER) && (that.unit == Unit.LITER || that.unit == Unit.GALLON)) {
+                return this.unit.conversionToBase(this.value, "volume") == that.unit.conversionToBase(that.value, "volume");
+            }
+
+            return this.unit.conversionToBase(this.value, "length") == that.unit.conversionToBase(that.value, "length");
         }
         return false;
     }
 
-    public Quantity add(Quantity other) {
+    public Quantity add(Quantity that) {
+        if ((this.unit == Unit.GALLON || this.unit == Unit.LITER) && (that.unit == Unit.LITER || that.unit == Unit.GALLON))
+            return new Quantity(unit.conversionToBase(value, "volume") + that.unit.conversionToBase(that.value, "volume"), Unit.LITER);
 
-        if (this.unit == Unit.FOOT && other.unit == Unit.LITER || this.unit == Unit.FOOT && other.unit == Unit.GALLON) {
-            throw new IllegalArgumentException("unit are not of same type");
-        }
-
-        if (this.unit == Unit.INCH && other.unit == Unit.LITER || this.unit == Unit.INCH && other.unit == Unit.GALLON) {
-            throw new IllegalArgumentException("unit are not of same type");
-        }
-
-        if (this.unit == Unit.YARD && other.unit == Unit.LITER || this.unit == Unit.YARD && other.unit == Unit.GALLON) {
-            throw new IllegalArgumentException("unit are not of same type");
-        }
-
-        if (unit == Unit.GALLON || unit == Unit.LITER)
-            return new Quantity(unit.conversionToBase(value) + other.unit.conversionToBase(other.value), Unit.LITER);
-
-        return new Quantity(unit.conversionToBase(value) + other.unit.conversionToBase(other.value), Unit.INCH);
+        return new Quantity(unit.conversionToBase(value, "length") + that.unit.conversionToBase(that.value, "length"), Unit.INCH);
     }
 
     @Override

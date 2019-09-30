@@ -264,4 +264,14 @@ public class LengthTest {
             oneInch.add(oneLiter);
         });
     }
+
+    @Test
+    void givenOneInchAndOneGallon_WhenAdd_ThenShouldThrowIllegalArgumentException() {
+        Quantity oneInch = new Quantity(1, Unit.INCH);
+        Quantity oneGallon = new Quantity(1, Unit.GALLON);
+
+        assertThrows(IllegalArgumentException.class, () -> {
+            oneInch.add(oneGallon);
+        });
+    }
 }

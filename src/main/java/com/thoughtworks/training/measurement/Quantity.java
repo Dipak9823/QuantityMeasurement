@@ -29,7 +29,7 @@ public class Quantity {
             throw new IllegalArgumentException("unit are not of same type");
         }
 
-        if (this.unit == Unit.INCH && other.unit == Unit.LITER) {
+        if (this.unit == Unit.INCH && other.unit == Unit.LITER || this.unit == Unit.INCH && other.unit == Unit.GALLON) {
             throw new IllegalArgumentException("unit are not of same type");
         }
 

@@ -18,6 +18,9 @@ public class Quantity {
         if (other instanceof Quantity) {
             Quantity that = (Quantity) other;
 
+            if(this.unit == Unit.INCH && that.unit == Unit.LITER){
+                return false;
+            }
             return this.unit.conversionToBase(this.value) == that.unit.conversionToBase(that.value);
         }
         return false;

@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class LengthTest {
+public class QuantityTest {
 
     @Test
     void givenZeroFoot_WhenEquals_ThenShouldBeEqual() {
@@ -293,5 +293,13 @@ public class LengthTest {
         assertThrows(IllegalArgumentException.class, () -> {
             oneYard.add(oneGallon);
         });
+    }
+
+    @Test
+    void givenOneInchAndOneLiter_WhenEquals_ThenShouldThrowIllegalArgumentException() {
+        Quantity oneInch = new Quantity(1, Unit.INCH);
+        Quantity oneLiter = new Quantity(1, Unit.LITER);
+
+        assertFalse(oneInch.equals(oneLiter));
     }
 }

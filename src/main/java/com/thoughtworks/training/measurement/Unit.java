@@ -1,20 +1,21 @@
 package com.thoughtworks.training.measurement;
 
 public enum Unit {
-    INCH(1, "length"), FOOT(12, "length"), YARD(36, "length"), LITER(1, "volume"), GALLON(3.78, "volume");
+    INCH(1, Type.length), FOOT(12, Type.length), YARD(36, Type.length), LITER(1, Type.volume), GALLON(3.78, Type.volume);
 
+    enum Type{
+        length,
+        volume
+    }
     private double conversionFactor;
-    private String type;
+    protected Type type;
 
-    Unit(double conversionFactor, String type) {
+    Unit(double conversionFactor, Type type) {
         this.conversionFactor = conversionFactor;
         this.type = type;
     }
 
-    double conversionToBase(double value, String type) {
-        if (this.type.equals(type)) {
-            return value * conversionFactor;
-        }
-        throw new IllegalArgumentException("");
+    double conversionToBase(double value) {
+        return value * conversionFactor;
     }
 }

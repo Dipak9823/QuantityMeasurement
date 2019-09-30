@@ -18,24 +18,21 @@ public class Quantity {
         if (other instanceof Quantity) {
             Quantity that = (Quantity) other;
 
-            if (this.unit == Unit.INCH && that.unit == Unit.LITER) {
-                return false;
+            if (this.unit.type.equals(that.unit.type)) {
+                return this.unit.conversionToBase(this.value) == that.unit.conversionToBase(that.value);
             }
 
-            if ((this.unit == Unit.GALLON || this.unit == Unit.LITER) && (that.unit == Unit.LITER || that.unit == Unit.GALLON)) {
-                return this.unit.conversionToBase(this.value, "volume") == that.unit.conversionToBase(that.value, "volume");
-            }
-
-            return this.unit.conversionToBase(this.value, "length") == that.unit.conversionToBase(that.value, "length");
+            return false;
         }
         return false;
     }
 
-    public Quantity add(Quantity that) {
-        if ((this.unit == Unit.GALLON || this.unit == Unit.LITER) && (that.unit == Unit.LITER || that.unit == Unit.GALLON))
-            return new Quantity(unit.conversionToBase(value, "volume") + that.unit.conversionToBase(that.value, "volume"), Unit.LITER);
 
-        return new Quantity(unit.conversionToBase(value, "length") + that.unit.conversionToBase(that.value, "length"), Unit.INCH);
+    public Quantity add(Quantity that) {
+        if (this.unit.type.equals(that.unit.type))
+            return new Quantity(unit.conversionToBase(value) + that.unit.conversionToBase(that.value), that.unit);
+
+        throw new IllegalArgumentException("");
     }
 
     @Override

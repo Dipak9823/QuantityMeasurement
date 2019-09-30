@@ -28,6 +28,11 @@ public class Quantity {
         if (this.unit == Unit.FOOT && other.unit == Unit.LITER || this.unit == Unit.FOOT && other.unit == Unit.GALLON) {
             throw new IllegalArgumentException("unit are not of same type");
         }
+
+        if (this.unit == Unit.INCH && other.unit == Unit.LITER) {
+            throw new IllegalArgumentException("unit are not of same type");
+        }
+
         if (unit == Unit.GALLON || unit == Unit.LITER)
             return new Quantity(unit.conversionToBase(value) + other.unit.conversionToBase(other.value), Unit.LITER);
 

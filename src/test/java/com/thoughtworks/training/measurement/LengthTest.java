@@ -235,6 +235,14 @@ public class LengthTest {
         assertEquals(new Length(4.779999999999999, Unit.LITER), oneGallon.add(oneLiter));
     }
 
+    @Test
+    void givenOneFootAndOneLiter_WhenAdd_ThenShouldThrowException() {
+        Length oneFoot = new Length(1, Unit.FOOT);
+        Length oneLiter = new Length(1, Unit.LITER);
 
+        assertThrows(IllegalArgumentException.class, () -> {
+            oneFoot.add(oneLiter);
+        });
+    }
 
 }

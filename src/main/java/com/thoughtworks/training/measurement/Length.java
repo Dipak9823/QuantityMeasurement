@@ -17,16 +17,21 @@ public class Length {
 
         if (other instanceof Length) {
             Length that = (Length) other;
+
             return this.unit.conversionToBase(this.value) == that.unit.conversionToBase(that.value);
         }
         return false;
     }
 
     public Length add(Length other) {
-        if(unit==Unit.GALLON||unit==Unit.LITER)
-            return new Length(unit.conversionToBase(value)+ other.unit.conversionToBase(other.value), Unit.LITER);
 
-        return new Length(unit.conversionToBase(value)+ other.unit.conversionToBase(other.value), Unit.INCH);
+        if (this.unit == Unit.FOOT && other.unit == Unit.LITER) {
+            throw new IllegalArgumentException("unit are not of same type");
+        }
+        if (unit == Unit.GALLON || unit == Unit.LITER)
+            return new Length(unit.conversionToBase(value) + other.unit.conversionToBase(other.value), Unit.LITER);
+
+        return new Length(unit.conversionToBase(value) + other.unit.conversionToBase(other.value), Unit.INCH);
     }
 
     @Override

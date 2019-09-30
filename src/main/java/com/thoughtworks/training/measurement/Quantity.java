@@ -25,7 +25,7 @@ public class Quantity {
 
     public Quantity add(Quantity other) {
 
-        if (this.unit == Unit.FOOT && other.unit == Unit.LITER) {
+        if (this.unit == Unit.FOOT && other.unit == Unit.LITER || this.unit == Unit.FOOT && other.unit == Unit.GALLON) {
             throw new IllegalArgumentException("unit are not of same type");
         }
         if (unit == Unit.GALLON || unit == Unit.LITER)

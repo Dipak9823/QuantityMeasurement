@@ -1,5 +1,7 @@
 package com.thoughtworks.training.measurement;
 
+import javax.print.attribute.standard.PrintQuality;
+
 public class Quantity {
     private final double value;
     private final Unit unit;
@@ -19,7 +21,7 @@ public class Quantity {
             Quantity that = (Quantity) other;
 
             if (this.unit.type.equals(that.unit.type)) {
-                return this.unit.conversionToBase(this.value) == that.unit.conversionToBase(that.value);
+                return this.unit.conversionToBase(this.value).value == that.unit.conversionToBase(that.value).value;
             }
 
             return false;
@@ -29,8 +31,11 @@ public class Quantity {
 
 
     public Quantity add(Quantity that) {
+
+        Quantity myBase=unit.conversionToBase(value);
+        Quantity otherBase=that.unit.conversionToBase(that.value);
         if (this.unit.type.equals(that.unit.type))
-            return new Quantity(unit.conversionToBase(value) + that.unit.conversionToBase(that.value), that.unit);
+            return new Quantity(myBase.value + otherBase.value,myBase.unit);
 
         throw new IllegalArgumentException("");
     }

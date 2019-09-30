@@ -33,7 +33,7 @@ public class Quantity {
             throw new IllegalArgumentException("unit are not of same type");
         }
 
-        if (this.unit == Unit.YARD && other.unit == Unit.LITER) {
+        if (this.unit == Unit.YARD && other.unit == Unit.LITER || this.unit == Unit.YARD && other.unit == Unit.GALLON) {
             throw new IllegalArgumentException("unit are not of same type");
         }
 

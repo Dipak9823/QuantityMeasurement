@@ -284,4 +284,14 @@ public class LengthTest {
             oneYard.add(oneLiter);
         });
     }
+
+    @Test
+    void givenOneYardAndOneGallon_WhenAdd_ThenShouldThrowIllegalArgumentException() {
+        Quantity oneYard = new Quantity(1, Unit.YARD);
+        Quantity oneGallon = new Quantity(1, Unit.GALLON);
+
+        assertThrows(IllegalArgumentException.class, () -> {
+            oneYard.add(oneGallon);
+        });
+    }
 }

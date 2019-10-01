@@ -474,4 +474,12 @@ public class QuantityTest {
 
         assertTrue(oneFahrenheit.equals(anotherOneFahrenheit));
     }
+
+    @Test
+    void givenOneFahrenheitAndTwoFahrenheit_WhenEquals_ThenShouldBeEqual() {
+        Quantity oneFahrenheit = new Quantity(1, new Fahrenheit());
+        Quantity twoFahrenheit = new Quantity(2, new Fahrenheit());
+
+        assertFalse(oneFahrenheit.equals(twoFahrenheit));
+    }
 }

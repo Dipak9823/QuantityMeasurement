@@ -2,9 +2,9 @@ package com.thoughtworks.training.measurement;
 
 public class Quantity {
     private final double value;
-    private final Unit1 unit;
+    private final Unit unit;
 
-    public Quantity(double value, Unit1 unit) {
+    public Quantity(double value, Unit unit) {
         this.value = value;
         this.unit = unit;
     }
@@ -19,11 +19,8 @@ public class Quantity {
             Quantity that = (Quantity) other;
             Quantity myBase=unit.conversionToBase(value);
             Quantity otherBase=that.unit.conversionToBase(that.value);
-            if (myBase.unit.equals(otherBase.unit)) {
-                return myBase.value == otherBase.value;
-            }
 
-            return false;
+            return myBase.unit.equals(otherBase.unit) && myBase.value == otherBase.value ;
         }
         return false;
     }

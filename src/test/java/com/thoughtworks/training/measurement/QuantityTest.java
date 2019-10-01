@@ -398,4 +398,11 @@ public class QuantityTest {
         assertEquals(new Quantity(0, new KiloGram()), zeroKiloGram.add(zeroKiloGram));
     }
 
+    @Test
+    void givenOneKiloGramAndOneKiloGram_WhenAdd_ThenShouldBeOneKiloGram() {
+        Quantity oneKiloGram = new Quantity(1, new KiloGram());
+        Quantity anotherOneKiloGram=new Quantity(1,new KiloGram());
+
+        assertEquals(new Quantity(2, new KiloGram()), oneKiloGram.add(anotherOneKiloGram));
+    }
 }

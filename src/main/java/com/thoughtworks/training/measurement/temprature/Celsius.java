@@ -5,12 +5,12 @@ import com.thoughtworks.training.measurement.Unit;
 import com.thoughtworks.training.measurement.wieght.Gram;
 
 public class Celsius implements Unit {
-    private final double conversionFactor=1;
+    private final double conversionFactor = 1;
 
 
     @Override
     public Quantity conversionToBase(double value) {
-        return new Quantity(0,new Celsius());
+        return new Quantity(value * conversionFactor, new Celsius());
     }
 
     @Override

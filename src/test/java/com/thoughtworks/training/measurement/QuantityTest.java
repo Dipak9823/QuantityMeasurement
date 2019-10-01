@@ -449,4 +449,12 @@ public class QuantityTest {
 
         assertTrue(oneCelsius.equals(anotherOneCelsius));
     }
+
+    @Test
+    void givenOneCelsiusAndTwoCelsius_WhenEquals_ThenShouldNotBeEqual() {
+        Quantity oneCelsius = new Quantity(1, new Celsius());
+        Quantity twoCelsius = new Quantity(2, new Celsius());
+
+        assertFalse(oneCelsius.equals(twoCelsius));
+    }
 }

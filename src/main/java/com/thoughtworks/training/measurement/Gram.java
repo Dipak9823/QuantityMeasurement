@@ -5,7 +5,7 @@ public class Gram implements Unit{
 
     @Override
     public Quantity conversionToBase(double value) {
-        return new Quantity(0,new Gram());
+        return new Quantity(value,new Gram());
     }
 
     @Override

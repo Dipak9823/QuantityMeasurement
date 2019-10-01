@@ -308,4 +308,11 @@ public class QuantityTest {
         assertFalse(oneInch.equals(oneLiter));
     }
 
+    @Test
+    void givenOneGramAndOneGram_WhenEquals_ThenShouldBeEqual() {
+        Quantity zeroGram = new Quantity(0, new Gram());
+        Quantity anotherZeroGram=new Quantity(0,new Gram());
+
+        assertTrue(zeroGram.equals(anotherZeroGram));
+    }
 }

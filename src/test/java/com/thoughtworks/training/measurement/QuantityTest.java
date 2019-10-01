@@ -421,4 +421,13 @@ public class QuantityTest {
 
         assertEquals(oneKiloGram,oneGram);
     }
+
+    @Test
+    void givenOneKiloGramAndOneGram_WhenAnd_ThenShouldBeOneThousandOneKiloGram() {
+        Quantity oneKiloGram = new Quantity(1, new KiloGram());
+        Quantity oneGram=new Quantity(1,new Gram());
+
+        assertEquals(new Quantity(1001,new Gram()),oneKiloGram.add(oneGram));
+    }
+
 }

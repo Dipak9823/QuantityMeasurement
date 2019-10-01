@@ -413,4 +413,12 @@ public class QuantityTest {
 
         assertNotEquals(oneKiloGram,oneGram);
     }
+
+    @Test
+    void givenZeroKiloGramAndZeroGram_WhenEquals_ThenShouldBeEqual() {
+        Quantity oneKiloGram = new Quantity(0, new KiloGram());
+        Quantity oneGram=new Quantity(0,new Gram());
+
+        assertEquals(oneKiloGram,oneGram);
+    }
 }

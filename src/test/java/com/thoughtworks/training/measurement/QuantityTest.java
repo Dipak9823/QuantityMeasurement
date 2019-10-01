@@ -333,4 +333,12 @@ public class QuantityTest {
         assertTrue(oneGram.equals(otherOneGram));
     }
 
+    @Test
+    void givenOneGramAndNull_WhenEquals_ThenShouldNotBeEqual() {
+
+        Quantity oneFoot = new Quantity(1, new Gram());
+        Quantity twoFoot = null;
+
+        assertFalse(oneFoot.equals(twoFoot));
+    }
 }

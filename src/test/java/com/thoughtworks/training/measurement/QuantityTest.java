@@ -315,4 +315,14 @@ public class QuantityTest {
 
         assertTrue(zeroGram.equals(anotherZeroGram));
     }
+
+    @Test
+    void givenZeroGramAndAnotherObject_WhenEquals_ThenShouldNotBeEqual() {
+
+        Quantity zeroGram = new Quantity(0, new Gram());
+
+        assertFalse(zeroGram.equals(new Object()));
+    }
+
+
 }

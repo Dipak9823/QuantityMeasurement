@@ -3,7 +3,7 @@ package com.thoughtworks.training.measurement.length;
 import com.thoughtworks.training.measurement.Quantity;
 import com.thoughtworks.training.measurement.Unit;
 
-public class Gram implements Unit {
+public class Inch implements Unit {
     private final int conversionFactor=1;
     @Override
     public Quantity conversionToBase(double value) {
@@ -12,6 +12,6 @@ public class Gram implements Unit {
 
     @Override
     public boolean equals(Object obj) {
-        return obj instanceof Gram;
+        return obj instanceof Inch;
     }
 }

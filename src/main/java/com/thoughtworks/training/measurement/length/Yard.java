@@ -1,14 +1,14 @@
 package com.thoughtworks.training.measurement.length;
 
-import com.thoughtworks.training.measurement.Quantity;
-import com.thoughtworks.training.measurement.Unit;
+import com.thoughtworks.training.measurement.AddableQuantity;
+import com.thoughtworks.training.measurement.AddableUnit;
 
-public class Yard implements Unit {
+public class Yard implements AddableUnit {
     private final double conversionFactor=36;
 
     @Override
-    public Quantity conversionToBase(double value) {
-        return new Quantity(value * conversionFactor, new Inch());
+    public AddableQuantity conversionToBase(double value) {
+        return new AddableQuantity(value * conversionFactor, new Inch());
     }
 
     @Override

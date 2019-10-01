@@ -1,13 +1,13 @@
 package com.thoughtworks.training.measurement.length;
 
-import com.thoughtworks.training.measurement.Quantity;
-import com.thoughtworks.training.measurement.Unit;
+import com.thoughtworks.training.measurement.AddableQuantity;
+import com.thoughtworks.training.measurement.AddableUnit;
 
-public class Inch implements Unit {
+public class Inch implements AddableUnit {
     private final int conversionFactor=1;
     @Override
-    public Quantity conversionToBase(double value) {
-       return new Quantity(value * conversionFactor, this);
+    public AddableQuantity conversionToBase(double value) {
+       return new AddableQuantity(value * conversionFactor, this);
     }
 
     @Override

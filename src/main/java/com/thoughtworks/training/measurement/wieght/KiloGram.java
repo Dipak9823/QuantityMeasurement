@@ -1,14 +1,14 @@
 package com.thoughtworks.training.measurement.wieght;
 
-import com.thoughtworks.training.measurement.Quantity;
-import com.thoughtworks.training.measurement.Unit;
+import com.thoughtworks.training.measurement.AddableQuantity;
+import com.thoughtworks.training.measurement.AddableUnit;
 
-public class KiloGram implements Unit {
+public class KiloGram implements AddableUnit {
     private final double conversionFactor = 1000;
 
     @Override
-    public Quantity conversionToBase(double value) {
-        return new Quantity(value * conversionFactor, new Gram());
+    public AddableQuantity conversionToBase(double value) {
+        return new AddableQuantity(value * conversionFactor, new Gram());
     }
 
     @Override

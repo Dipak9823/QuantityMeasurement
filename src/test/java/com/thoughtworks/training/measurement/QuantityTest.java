@@ -19,8 +19,8 @@ public class QuantityTest {
     @Test
     void givenZeroFoot_WhenEquals_ThenShouldBeEqual() {
 
-        Quantity zeroFoot = new Quantity(0, new Foot());
-        Quantity anotherZeroFoot = new Quantity(0, new Foot());
+        AddableQuantity zeroFoot = new AddableQuantity(0, new Foot());
+        AddableQuantity anotherZeroFoot = new AddableQuantity(0, new Foot());
 
         assertTrue(zeroFoot.equals(anotherZeroFoot));
     }
@@ -28,7 +28,7 @@ public class QuantityTest {
     @Test
     void givenZeroFootAndAnotherObject_WhenEquals_ThenShouldNotBeEqual() {
 
-        Quantity zeroFoot = new Quantity(0, new Foot());
+        AddableQuantity zeroFoot = new AddableQuantity(0, new Foot());
 
         assertFalse(zeroFoot.equals(new Object()));
     }
@@ -36,8 +36,8 @@ public class QuantityTest {
     @Test
     void givenOneFootAndTwoFoot_WhenEquals_ThenShouldNotBeEqual() {
 
-        Quantity oneFoot = new Quantity(1, new Foot());
-        Quantity twoFoot = new Quantity(2, new Foot());
+        AddableQuantity oneFoot = new AddableQuantity(1, new Foot());
+        AddableQuantity twoFoot = new AddableQuantity(2, new Foot());
 
         assertFalse(oneFoot.equals(twoFoot));
     }
@@ -45,8 +45,8 @@ public class QuantityTest {
     @Test
     void givenOneFootAndOneFoot_WhenEquals_ThenShouldBeEqual() {
 
-        Quantity oneFoot = new Quantity(1.0, new Foot());
-        Quantity otherFoot = new Quantity(1.0, new Foot());
+        AddableQuantity oneFoot = new AddableQuantity(1.0, new Foot());
+        AddableQuantity otherFoot = new AddableQuantity(1.0, new Foot());
 
         assertTrue(oneFoot.equals(otherFoot));
     }
@@ -54,23 +54,23 @@ public class QuantityTest {
     @Test
     void givenOneFootAndNull_WhenEquals_ThenShouldNotBeEqual() {
 
-        Quantity oneFoot = new Quantity(1, new Foot());
-        Quantity twoFoot = null;
+        AddableQuantity oneFoot = new AddableQuantity(1, new Foot());
+        AddableQuantity twoFoot = null;
 
         assertFalse(oneFoot.equals(twoFoot));
     }
 
     @Test
     void givenZeroInch_WhenCompare_ThenShouldBeEqual() {
-        Quantity zeroInch = new Quantity(0, new Inch());
-        Quantity anotherZeroInch = new Quantity(0, new Inch());
+        AddableQuantity zeroInch = new AddableQuantity(0, new Inch());
+        AddableQuantity anotherZeroInch = new AddableQuantity(0, new Inch());
 
         assertTrue(zeroInch.equals(anotherZeroInch));
     }
 
     @Test
     void givenZeroInchAndAnotherObject_WhenEquals_ThenShouldNotBeEqual() {
-        Quantity zeroInch = new Quantity(0, new Inch());
+        AddableQuantity zeroInch = new AddableQuantity(0, new Inch());
 
         assertFalse(zeroInch.equals(new Object()));
     }
@@ -78,8 +78,8 @@ public class QuantityTest {
     @Test
     void givenOneInchAndOneInch_WhenEquals_ThenShouldBeEqual() {
 
-        Quantity oneFoot = new Quantity(1, new Foot());
-        Quantity otherFoot = new Quantity(1, new Foot());
+        AddableQuantity oneFoot = new AddableQuantity(1, new Foot());
+        AddableQuantity otherFoot = new AddableQuantity(1, new Foot());
 
         assertTrue(oneFoot.equals(otherFoot));
     }
@@ -87,8 +87,8 @@ public class QuantityTest {
     @Test
     void givenOneInchAndTwoInch_WhenEquals_ThenShouldNotBeEqual() {
 
-        Quantity oneInch = new Quantity(1, new Inch());
-        Quantity twoInch = new Quantity(2, new Inch());
+        AddableQuantity oneInch = new AddableQuantity(1, new Inch());
+        AddableQuantity twoInch = new AddableQuantity(2, new Inch());
 
         assertFalse(oneInch.equals(twoInch));
     }
@@ -96,48 +96,48 @@ public class QuantityTest {
     @Test
     void givenOneInchAndNull_WhenEquals_ThenShouldNotBeEqual() {
 
-        Quantity oneInch = new Quantity(1, new Inch());
-        Quantity twoInch = null;
+        AddableQuantity oneInch = new AddableQuantity(1, new Inch());
+        AddableQuantity twoInch = null;
 
         assertFalse(oneInch.equals(twoInch));
     }
 
     @Test
     void givenOneInchOneFoot_WhenEquals_ThenShouldNotBeEqual() {
-        Quantity oneInch = new Quantity(1, new Inch());
-        Quantity oneFoot = new Quantity(1, new Foot());
+        AddableQuantity oneInch = new AddableQuantity(1, new Inch());
+        AddableQuantity oneFoot = new AddableQuantity(1, new Foot());
 
         assertFalse(oneFoot.equals(oneInch));
     }
 
     @Test
     void givenZeroInchZeroFoot_WhenEquals_ThenShouldBeEqual() {
-        Quantity zeroInch = new Quantity(0, new Inch());
-        Quantity zeroFoot = new Quantity(0, new Foot());
+        AddableQuantity zeroInch = new AddableQuantity(0, new Inch());
+        AddableQuantity zeroFoot = new AddableQuantity(0, new Foot());
 
         assertTrue(zeroFoot.equals(zeroInch));
     }
 
     @Test
     void givenOneInchThreeFoot_WhenEquals_ThenShouldBeEqual() {
-        Quantity twelveInch = new Quantity(12, new Inch());
-        Quantity oneFoot = new Quantity(1, new Foot());
+        AddableQuantity twelveInch = new AddableQuantity(12, new Inch());
+        AddableQuantity oneFoot = new AddableQuantity(1, new Foot());
 
         assertTrue(oneFoot.equals(twelveInch));
     }
 
     @Test
     void givenTwoFeetAndTwentyFourInch_WhenEquals_ThenShouldBeEqual() {
-        Quantity twentyFourInch = new Quantity(24, new Inch());
-        Quantity twoFeet = new Quantity(2, new Foot());
+        AddableQuantity twentyFourInch = new AddableQuantity(24, new Inch());
+        AddableQuantity twoFeet = new AddableQuantity(2, new Foot());
 
         assertTrue(twoFeet.equals(twentyFourInch));
     }
 
     @Test
     void givenOneFeetAndTwelveInch_WhenEquals_ThenShouldBeEqual() {
-        Quantity twelveInch = new Quantity(12, new Inch());
-        Quantity oneFoot = new Quantity(1, new Foot());
+        AddableQuantity twelveInch = new AddableQuantity(12, new Inch());
+        AddableQuantity oneFoot = new AddableQuantity(1, new Foot());
 
         assertTrue(twelveInch.equals(oneFoot));
     }
@@ -146,24 +146,24 @@ public class QuantityTest {
     class YardTest {
         @Test
         void givenZeroYardAndZeroYard_whenEquals_thenShouldBeEqual() {
-            Quantity zeroYard = new Quantity(0, new Yard());
-            Quantity anotherZeroYard = new Quantity(0, new Yard());
+            AddableQuantity zeroYard = new AddableQuantity(0, new Yard());
+            AddableQuantity anotherZeroYard = new AddableQuantity(0, new Yard());
 
             assertEquals(zeroYard, anotherZeroYard);
         }
 
         @Test
         void givenOneYardAndTwoYard_whenEquals_thenShouldBeNotEqual() {
-            Quantity oneYard = new Quantity(1, new Yard());
-            Quantity twoYard = new Quantity(2, new Yard());
+            AddableQuantity oneYard = new AddableQuantity(1, new Yard());
+            AddableQuantity twoYard = new AddableQuantity(2, new Yard());
 
             assertNotEquals(oneYard, twoYard);
         }
 
         @Test
         void givenOneYardAndThreeFoot_whenEquals_thenShouldBeNotEqual() {
-            Quantity oneYard = new Quantity(1, new Yard());
-            Quantity threeFoot = new Quantity(3, new Foot());
+            AddableQuantity oneYard = new AddableQuantity(1, new Yard());
+            AddableQuantity threeFoot = new AddableQuantity(3, new Foot());
 
             assertEquals(oneYard, threeFoot);
         }
@@ -171,83 +171,83 @@ public class QuantityTest {
 
     @Test
     void givenZeroInchAndZeroInch_WhenAdd_ThenShouldBeZero() {
-        Quantity zeroInch = new Quantity(0, new Inch());
+        AddableQuantity zeroInch = new AddableQuantity(0, new Inch());
 
-        assertEquals(new Quantity(0, new Inch()), zeroInch.add(zeroInch));
+        assertEquals(new AddableQuantity(0, new Inch()), zeroInch.add(zeroInch));
     }
 
     @Test
     void givenOneInchAndZeroInch_WhenAdd_ThenShouldBeOne() {
-        Quantity zeroInch = new Quantity(0, new Inch());
-        Quantity oneInch = new Quantity(1, new Inch());
+        AddableQuantity zeroInch = new AddableQuantity(0, new Inch());
+        AddableQuantity oneInch = new AddableQuantity(1, new Inch());
 
-        assertEquals(new Quantity(1, new Inch()), zeroInch.add(oneInch));
+        assertEquals(new AddableQuantity(1, new Inch()), zeroInch.add(oneInch));
     }
 
     @Test
     void givenTwoInchAndTwoInch_WhenAdd_ThenShouldBeFour() {
-        Quantity twoInches = new Quantity(2, new Inch());
+        AddableQuantity twoInches = new AddableQuantity(2, new Inch());
 
-        assertEquals(new Quantity(4, new Inch()), twoInches.add(twoInches));
+        assertEquals(new AddableQuantity(4, new Inch()), twoInches.add(twoInches));
     }
 
     @Test
     void givenZeroFootAndZeroFoot_WhenAdd_ThenShouldBeZeroFoot() {
-        Quantity zeroFoot = new Quantity(0, new Foot());
+        AddableQuantity zeroFoot = new AddableQuantity(0, new Foot());
 
-        assertEquals(new Quantity(0, new Foot()), zeroFoot.add(zeroFoot));
+        assertEquals(new AddableQuantity(0, new Foot()), zeroFoot.add(zeroFoot));
     }
 
     @Test
     void givenOneFootAndOneFoot_WhenAdd_ThenShouldBeTwoFeet() {
-        Quantity oneFoot = new Quantity(1, new Foot());
+        AddableQuantity oneFoot = new AddableQuantity(1, new Foot());
 
-        assertEquals(new Quantity(2, new Foot()), oneFoot.add(oneFoot));
+        assertEquals(new AddableQuantity(2, new Foot()), oneFoot.add(oneFoot));
     }
 
     @Test
     void givenOneFootAndTwoInches_WhenAdd_ThenShouldBeFourteenInches() {
-        Quantity oneFoot = new Quantity(1, new Foot());
-        Quantity twoInches = new Quantity(2, new Inch());
+        AddableQuantity oneFoot = new AddableQuantity(1, new Foot());
+        AddableQuantity twoInches = new AddableQuantity(2, new Inch());
 
-        assertEquals(new Quantity(14, new Inch()), oneFoot.add(twoInches));
+        assertEquals(new AddableQuantity(14, new Inch()), oneFoot.add(twoInches));
     }
 
     @Test
     void givenTwoInchesAndOneFoot_WhenAdd_ThenShouldBeFourteenInches() {
-        Quantity oneFoot = new Quantity(1, new Foot());
-        Quantity twoInches = new Quantity(2, new Inch());
+        AddableQuantity oneFoot = new AddableQuantity(1, new Foot());
+        AddableQuantity twoInches = new AddableQuantity(2, new Inch());
 
-        assertEquals(new Quantity(14, new Inch()), twoInches.add(oneFoot));
+        assertEquals(new AddableQuantity(14, new Inch()), twoInches.add(oneFoot));
     }
 
     @Test
     void givenZeroLiterAndZeroLiter_WhenAdd_ThenShouldBeZeroLiter() {
-        Quantity zeroLiter = new Quantity(0, new Liter());
+        AddableQuantity zeroLiter = new AddableQuantity(0, new Liter());
 
-        assertEquals(new Quantity(0, new Liter()), zeroLiter.add(zeroLiter));
+        assertEquals(new AddableQuantity(0, new Liter()), zeroLiter.add(zeroLiter));
     }
 
     @Test
     void givenOneGallonAndOneGallon_WhenAdd_ThenShouldBeTwoGallon() {
-        Quantity oneGallon = new Quantity(1, new Gallon());
+        AddableQuantity oneGallon = new AddableQuantity(1, new Gallon());
 
-        assertEquals(new Quantity(2, new Gallon()), oneGallon.add(oneGallon));
+        assertEquals(new AddableQuantity(2, new Gallon()), oneGallon.add(oneGallon));
     }
 
     @Test
     void givenOneGallonAndOneLiter_WhenAdd_ThenShouldBeFourPointSevenEightLiters() {
-        Quantity oneGallon = new Quantity(1, new Gallon());
-        Quantity oneLiter = new Quantity(1, new Liter());
+        AddableQuantity oneGallon = new AddableQuantity(1, new Gallon());
+        AddableQuantity oneLiter = new AddableQuantity(1, new Liter());
 
 
-        assertEquals(new Quantity(4.779999999999999, new Liter()), oneGallon.add(oneLiter));
+        assertEquals(new AddableQuantity(4.779999999999999, new Liter()), oneGallon.add(oneLiter));
     }
 
     @Test
     void givenOneFootAndOneLiter_WhenAdd_ThenShouldThrowIllegalArgumentsException() {
-        Quantity oneFoot = new Quantity(1, new Foot());
-        Quantity oneLiter = new Quantity(1, new Liter());
+        AddableQuantity oneFoot = new AddableQuantity(1, new Foot());
+        AddableQuantity oneLiter = new AddableQuantity(1, new Liter());
 
         assertThrows(IllegalArgumentException.class, () -> {
             oneFoot.add(oneLiter);
@@ -256,8 +256,8 @@ public class QuantityTest {
 
     @Test
     void givenOneFootAndOneGallon_WhenAdd_ThenShouldThrowIllegalArgumentException() {
-        Quantity oneFoot = new Quantity(1, new Foot());
-        Quantity oneGallon = new Quantity(1, new Gallon());
+        AddableQuantity oneFoot = new AddableQuantity(1, new Foot());
+        AddableQuantity oneGallon = new AddableQuantity(1, new Gallon());
 
         assertThrows(IllegalArgumentException.class, () -> {
             oneFoot.add(oneGallon);
@@ -266,8 +266,8 @@ public class QuantityTest {
 
     @Test
     void givenOneInchAndOneLiter_WhenAdd_ThenShouldThrowIllegalArgumentException() {
-        Quantity oneInch = new Quantity(1, new Inch());
-        Quantity oneLiter = new Quantity(1, new Liter());
+        AddableQuantity oneInch = new AddableQuantity(1, new Inch());
+        AddableQuantity oneLiter = new AddableQuantity(1, new Liter());
 
         assertThrows(IllegalArgumentException.class, () -> {
             oneInch.add(oneLiter);
@@ -276,8 +276,8 @@ public class QuantityTest {
 
     @Test
     void givenOneInchAndOneGallon_WhenAdd_ThenShouldThrowIllegalArgumentException() {
-        Quantity oneInch = new Quantity(1, new Inch());
-        Quantity oneGallon = new Quantity(1, new Gallon());
+        AddableQuantity oneInch = new AddableQuantity(1, new Inch());
+        AddableQuantity oneGallon = new AddableQuantity(1, new Gallon());
 
         assertThrows(IllegalArgumentException.class, () -> {
             oneInch.add(oneGallon);
@@ -286,8 +286,8 @@ public class QuantityTest {
 
     @Test
     void givenOneYardAndOneLiter_WhenAdd_ThenShouldThrowIllegalArgumentException() {
-        Quantity oneYard = new Quantity(1, new Yard());
-        Quantity oneLiter = new Quantity(1, new Liter());
+        AddableQuantity oneYard = new AddableQuantity(1, new Yard());
+        AddableQuantity oneLiter = new AddableQuantity(1, new Liter());
 
         assertThrows(IllegalArgumentException.class, () -> {
             oneYard.add(oneLiter);
@@ -296,8 +296,8 @@ public class QuantityTest {
 
     @Test
     void givenOneYardAndOneGallon_WhenAdd_ThenShouldThrowIllegalArgumentException() {
-        Quantity oneYard = new Quantity(1, new Yard());
-        Quantity oneGallon = new Quantity(1, new Gallon());
+        AddableQuantity oneYard = new AddableQuantity(1, new Yard());
+        AddableQuantity oneGallon = new AddableQuantity(1, new Gallon());
 
         assertThrows(IllegalArgumentException.class, () -> {
             oneYard.add(oneGallon);
@@ -306,16 +306,16 @@ public class QuantityTest {
 
     @Test
     void givenOneInchAndOneLiter_WhenEquals_ThenShouldThrowIllegalArgumentException() {
-        Quantity oneInch = new Quantity(1, new Inch());
-        Quantity oneLiter = new Quantity(1, new Liter());
+        AddableQuantity oneInch = new AddableQuantity(1, new Inch());
+        AddableQuantity oneLiter = new AddableQuantity(1, new Liter());
 
         assertFalse(oneInch.equals(oneLiter));
     }
 
     @Test
     void givenZeroGramAndZeroGram_WhenEquals_ThenShouldBeEqual() {
-        Quantity zeroGram = new Quantity(0, new Gram());
-        Quantity anotherZeroGram = new Quantity(0, new Gram());
+        AddableQuantity zeroGram = new AddableQuantity(0, new Gram());
+        AddableQuantity anotherZeroGram = new AddableQuantity(0, new Gram());
 
         assertTrue(zeroGram.equals(anotherZeroGram));
     }
@@ -323,7 +323,7 @@ public class QuantityTest {
     @Test
     void givenZeroGramAndAnotherObject_WhenEquals_ThenShouldNotBeEqual() {
 
-        Quantity zeroGram = new Quantity(0, new Gram());
+        AddableQuantity zeroGram = new AddableQuantity(0, new Gram());
 
         assertFalse(zeroGram.equals(new Object()));
     }
@@ -331,8 +331,8 @@ public class QuantityTest {
     @Test
     void givenOneGramAndOneGram_WhenEquals_ThenShouldBeEqual() {
 
-        Quantity oneGram = new Quantity(1.0, new Gram());
-        Quantity otherOneGram = new Quantity(1.0, new Gram());
+        AddableQuantity oneGram = new AddableQuantity(1.0, new Gram());
+        AddableQuantity otherOneGram = new AddableQuantity(1.0, new Gram());
 
         assertTrue(oneGram.equals(otherOneGram));
     }
@@ -340,16 +340,16 @@ public class QuantityTest {
     @Test
     void givenOneGramAndNull_WhenEquals_ThenShouldNotBeEqual() {
 
-        Quantity oneFoot = new Quantity(1, new Gram());
-        Quantity twoFoot = null;
+        AddableQuantity oneFoot = new AddableQuantity(1, new Gram());
+        AddableQuantity twoFoot = null;
 
         assertFalse(oneFoot.equals(twoFoot));
     }
 
     @Test
     void givenZeroKiloGramAndZeroKiloGram_WhenEquals_ThenShouldBeEqual() {
-        Quantity zeroGram = new Quantity(0, new KiloGram());
-        Quantity anotherZeroGram = new Quantity(0, new KiloGram());
+        AddableQuantity zeroGram = new AddableQuantity(0, new KiloGram());
+        AddableQuantity anotherZeroGram = new AddableQuantity(0, new KiloGram());
 
         assertTrue(zeroGram.equals(anotherZeroGram));
     }
@@ -357,7 +357,7 @@ public class QuantityTest {
     @Test
     void givenZeroKiloGramAndAnotherObject_WhenEquals_ThenShouldNotBeEqual() {
 
-        Quantity zeroKiloGram = new Quantity(0, new KiloGram());
+        AddableQuantity zeroKiloGram = new AddableQuantity(0, new KiloGram());
 
         assertFalse(zeroKiloGram.equals(new Object()));
     }
@@ -365,8 +365,8 @@ public class QuantityTest {
     @Test
     void givenOneKiloGramtAndTwoKilogram_WhenEquals_ThenShouldNotBeEqual() {
 
-        Quantity oneKiloGram = new Quantity(1, new KiloGram());
-        Quantity twoKiloGram = new Quantity(2, new KiloGram());
+        AddableQuantity oneKiloGram = new AddableQuantity(1, new KiloGram());
+        AddableQuantity twoKiloGram = new AddableQuantity(2, new KiloGram());
 
         assertFalse(oneKiloGram.equals(twoKiloGram));
     }
@@ -374,112 +374,120 @@ public class QuantityTest {
     @Test
     void givenOneKiloGramtAndOneKilogram_WhenEquals_ThenShouldNotBeEqual() {
 
-        Quantity oneKiloGram = new Quantity(1, new KiloGram());
-        Quantity twoKiloGram = new Quantity(1, new KiloGram());
+        AddableQuantity oneKiloGram = new AddableQuantity(1, new KiloGram());
+        AddableQuantity twoKiloGram = new AddableQuantity(1, new KiloGram());
 
         assertTrue(oneKiloGram.equals(twoKiloGram));
     }
 
     @Test
     void givenZeroGramAndZeroGram_WhenAdd_ThenShouldBeZero() {
-        Quantity zeroInch = new Quantity(0, new Gram());
+        AddableQuantity zeroInch = new AddableQuantity(0, new Gram());
 
-        assertEquals(new Quantity(0, new Gram()), zeroInch.add(zeroInch));
+        assertEquals(new AddableQuantity(0, new Gram()), zeroInch.add(zeroInch));
     }
 
     @Test
     void givenOneGramAndOneGram_WhenAdd_ThenShouldBeZero() {
-        Quantity oneGram = new Quantity(1, new Gram());
-        Quantity anotherOneGram=new Quantity(1,new Gram());
+        AddableQuantity oneGram = new AddableQuantity(1, new Gram());
+        AddableQuantity anotherOneGram=new AddableQuantity(1,new Gram());
 
-        assertEquals(new Quantity(2, new Gram()), oneGram.add(anotherOneGram));
+        assertEquals(new AddableQuantity(2, new Gram()), oneGram.add(anotherOneGram));
     }
 
     @Test
     void givenZeroKiloGramAndZeroKiloGram_WhenAdd_ThenShouldBeZero() {
-        Quantity zeroKiloGram = new Quantity(0, new KiloGram());
+        AddableQuantity zeroKiloGram = new AddableQuantity(0, new KiloGram());
 
-        assertEquals(new Quantity(0, new KiloGram()), zeroKiloGram.add(zeroKiloGram));
+        assertEquals(new AddableQuantity(0, new KiloGram()), zeroKiloGram.add(zeroKiloGram));
     }
 
     @Test
     void givenOneKiloGramAndOneKiloGram_WhenAdd_ThenShouldBeOneKiloGram() {
-        Quantity oneKiloGram = new Quantity(1, new KiloGram());
-        Quantity anotherOneKiloGram=new Quantity(1,new KiloGram());
+        AddableQuantity oneKiloGram = new AddableQuantity(1, new KiloGram());
+        AddableQuantity anotherOneKiloGram=new AddableQuantity(1,new KiloGram());
 
-        assertEquals(new Quantity(2, new KiloGram()), oneKiloGram.add(anotherOneKiloGram));
+        assertEquals(new AddableQuantity(2, new KiloGram()), oneKiloGram.add(anotherOneKiloGram));
     }
 
     @Test
     void givenOneKiloGramAndOneGram_WhenEquals_ThenShouldNotBeEqual() {
-        Quantity oneKiloGram = new Quantity(1, new KiloGram());
-        Quantity oneGram=new Quantity(1,new Gram());
+        AddableQuantity oneKiloGram = new AddableQuantity(1, new KiloGram());
+        AddableQuantity oneGram=new AddableQuantity(1,new Gram());
 
         assertNotEquals(oneKiloGram,oneGram);
     }
 
     @Test
     void givenZeroKiloGramAndZeroGram_WhenEquals_ThenShouldBeEqual() {
-        Quantity oneKiloGram = new Quantity(0, new KiloGram());
-        Quantity oneGram=new Quantity(0,new Gram());
+        AddableQuantity oneKiloGram = new AddableQuantity(0, new KiloGram());
+        AddableQuantity oneGram=new AddableQuantity(0,new Gram());
 
         assertEquals(oneKiloGram,oneGram);
     }
 
     @Test
     void givenOneKiloGramAndOneGram_WhenAnd_ThenShouldBeOneThousandOneKiloGram() {
-        Quantity oneKiloGram = new Quantity(1, new KiloGram());
-        Quantity oneGram=new Quantity(1,new Gram());
+        AddableQuantity oneKiloGram = new AddableQuantity(1, new KiloGram());
+        AddableQuantity oneGram=new AddableQuantity(1,new Gram());
 
-        assertEquals(new Quantity(1001,new Gram()),oneKiloGram.add(oneGram));
+        assertEquals(new AddableQuantity(1001,new Gram()),oneKiloGram.add(oneGram));
     }
 
     //Test cases for Temperature
     @Test
     void givenZeroCelsiusAndZeroCelsius_WhenEquals_ThenShouldBeEqual() {
-        Quantity zeroCelsius = new Quantity(0, new Celsius());
-        Quantity anotherZeroCelsius = new Quantity(0, new Celsius());
+        NonAddableQuantity zeroCelsius = new NonAddableQuantity(0, new Celsius());
+        NonAddableQuantity anotherZeroCelsius = new NonAddableQuantity(0, new Celsius());
 
         assertTrue(zeroCelsius.equals(anotherZeroCelsius));
     }
 
     @Test
     void givenOneCelsiusAndOneCelsius_WhenEquals_ThenShouldBeEqual() {
-        Quantity oneCelsius = new Quantity(1, new Celsius());
-        Quantity anotherOneCelsius = new Quantity(1, new Celsius());
+        NonAddableQuantity oneCelsius = new NonAddableQuantity(1, new Celsius());
+        NonAddableQuantity anotherOneCelsius = new NonAddableQuantity(1, new Celsius());
 
         assertTrue(oneCelsius.equals(anotherOneCelsius));
     }
 
     @Test
     void givenOneCelsiusAndTwoCelsius_WhenEquals_ThenShouldNotBeEqual() {
-        Quantity oneCelsius = new Quantity(1, new Celsius());
-        Quantity twoCelsius = new Quantity(2, new Celsius());
+        NonAddableQuantity oneCelsius = new NonAddableQuantity(1, new Celsius());
+        NonAddableQuantity twoCelsius = new NonAddableQuantity(2, new Celsius());
 
         assertFalse(oneCelsius.equals(twoCelsius));
     }
 
     @Test
     void givenZeroFahrenheitAndZeroFahrenheit_WhenEquals_ThenShouldBeEqual() {
-        Quantity zeroFahrenheit = new Quantity(0, new Fahrenheit());
-        Quantity anotherZeroFahrenheit = new Quantity(0, new Fahrenheit());
+        NonAddableQuantity zeroFahrenheit = new NonAddableQuantity(0, new Fahrenheit());
+        NonAddableQuantity anotherZeroFahrenheit = new NonAddableQuantity(0, new Fahrenheit());
 
         assertTrue(zeroFahrenheit.equals(anotherZeroFahrenheit));
     }
 
     @Test
     void givenOneFahrenheitAndOneFahrenheit_WhenEquals_ThenShouldBeEqual() {
-        Quantity oneFahrenheit = new Quantity(1, new Fahrenheit());
-        Quantity anotherOneFahrenheit = new Quantity(1, new Fahrenheit());
+        NonAddableQuantity oneFahrenheit = new NonAddableQuantity(1, new Fahrenheit());
+        NonAddableQuantity anotherOneFahrenheit = new NonAddableQuantity(1, new Fahrenheit());
 
         assertTrue(oneFahrenheit.equals(anotherOneFahrenheit));
     }
 
     @Test
     void givenOneFahrenheitAndTwoFahrenheit_WhenEquals_ThenShouldBeEqual() {
-        Quantity oneFahrenheit = new Quantity(1, new Fahrenheit());
-        Quantity twoFahrenheit = new Quantity(2, new Fahrenheit());
+        NonAddableQuantity oneFahrenheit = new NonAddableQuantity(1, new Fahrenheit());
+        NonAddableQuantity twoFahrenheit = new NonAddableQuantity(2, new Fahrenheit());
 
         assertFalse(oneFahrenheit.equals(twoFahrenheit));
+    }
+
+    @Test
+    void givenOneFahrenheitAndTwoFahrenheit_WhenAdds_ThenShouldBeEqual() {
+        NonAddableQuantity oneFahrenheit = new NonAddableQuantity(1, new Fahrenheit());
+        NonAddableQuantity twoFahrenheit = new NonAddableQuantity(2, new Fahrenheit());
+
+        //assertEquals(new NonAddableQuantity(3,new Fahrenheit()),oneFahrenheit.add(twoFahrenheit));
     }
 }

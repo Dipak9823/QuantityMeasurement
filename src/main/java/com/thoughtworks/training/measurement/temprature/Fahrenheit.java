@@ -1,13 +1,17 @@
 package com.thoughtworks.training.measurement.temprature;
 
-import com.thoughtworks.training.measurement.Quantity;
-import com.thoughtworks.training.measurement.Unit;
+import com.thoughtworks.training.measurement.NonAddableQuantity;
+import com.thoughtworks.training.measurement.NonAddableUnit;
 
-public class Fahrenheit implements Unit {
-   // private final double conversionFactor = 1;
+public class Fahrenheit implements NonAddableUnit {
 
     @Override
-    public Quantity conversionToBase(double value) {
-        return new Quantity(((value * 9/5)+32), new Celsius());
+    public NonAddableQuantity conversionToBase(double value) {
+        return new NonAddableQuantity(((value * 9/5)+32), new Celsius());
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return obj instanceof Celsius;
     }
 }

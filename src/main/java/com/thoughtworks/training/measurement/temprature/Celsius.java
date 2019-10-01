@@ -1,15 +1,16 @@
 package com.thoughtworks.training.measurement.temprature;
 
-import com.thoughtworks.training.measurement.Quantity;
-import com.thoughtworks.training.measurement.Unit;
+import com.thoughtworks.training.measurement.AddableQuantity;
+import com.thoughtworks.training.measurement.NonAddableQuantity;
+import com.thoughtworks.training.measurement.NonAddableUnit;
 
-public class Celsius implements Unit {
+public class Celsius implements NonAddableUnit {
     private final double conversionFactor = 1;
 
 
     @Override
-    public Quantity conversionToBase(double value) {
-        return new Quantity(value * conversionFactor, new Celsius());
+    public NonAddableQuantity conversionToBase(double value) {
+        return new NonAddableQuantity(value * conversionFactor, new Celsius());
     }
 
     @Override

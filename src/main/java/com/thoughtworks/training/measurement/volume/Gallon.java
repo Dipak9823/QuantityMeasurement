@@ -1,14 +1,14 @@
 package com.thoughtworks.training.measurement.volume;
 
-import com.thoughtworks.training.measurement.Quantity;
-import com.thoughtworks.training.measurement.Unit;
+import com.thoughtworks.training.measurement.AddableQuantity;
+import com.thoughtworks.training.measurement.AddableUnit;
 
-public class Gallon implements Unit {
+public class Gallon implements AddableUnit {
     private final double conversionFactor=3.78;
 
     @Override
-    public Quantity conversionToBase(double value) {
-        return new Quantity(value*conversionFactor,new Liter());
+    public AddableQuantity conversionToBase(double value) {
+        return new AddableQuantity(value*conversionFactor,new Liter());
     }
 
     @Override

@@ -1,10 +1,10 @@
 package com.thoughtworks.training.measurement;
 
-public class Quantity {
+public class AddableQuantity {
     private final double value;
-    private final Unit unit;
+    private final AddableUnit unit;
 
-    public Quantity(double value, Unit unit) {
+    public AddableQuantity(double value, AddableUnit unit) {
         this.value = value;
         this.unit = unit;
     }
@@ -15,10 +15,10 @@ public class Quantity {
             return true;
         }
 
-        if (other instanceof Quantity) {
-            Quantity that = (Quantity) other;
-            Quantity myBase = unit.conversionToBase(value);
-            Quantity otherBase = that.unit.conversionToBase(that.value);
+        if (other instanceof AddableQuantity) {
+            AddableQuantity that = (AddableQuantity) other;
+            AddableQuantity myBase = unit.conversionToBase(value);
+            AddableQuantity otherBase = that.unit.conversionToBase(that.value);
 
             return myBase.unit.equals(otherBase.unit) && myBase.value == otherBase.value;
         }
@@ -26,12 +26,12 @@ public class Quantity {
     }
 
 
-     public Quantity add(Quantity that) {
+    public AddableQuantity add(AddableQuantity that) {
 
-        Quantity myBase = unit.conversionToBase(value);
-        Quantity otherBase = that.unit.conversionToBase(that.value);
+        AddableQuantity myBase = unit.conversionToBase(value);
+        AddableQuantity otherBase = that.unit.conversionToBase(that.value);
         if (myBase.unit.equals(otherBase.unit))
-            return new Quantity(myBase.value + otherBase.value, myBase.unit);
+            return new AddableQuantity(myBase.value + otherBase.value, myBase.unit);
 
         throw new IllegalArgumentException("");
     }

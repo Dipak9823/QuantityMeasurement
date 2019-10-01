@@ -1,16 +1,16 @@
 package com.thoughtworks.training.measurement.volume;
 
-import com.thoughtworks.training.measurement.Quantity;
-import com.thoughtworks.training.measurement.Unit;
+import com.thoughtworks.training.measurement.AddableQuantity;
+import com.thoughtworks.training.measurement.AddableUnit;
 
-public class Liter implements Unit {
+public class Liter implements AddableUnit {
     private final double conversionFactor = 1;
 
 
     @Override
-    public Quantity conversionToBase(double value) {
+    public AddableQuantity conversionToBase(double value) {
 
-        return new Quantity(value * conversionFactor,this);
+        return new AddableQuantity(value * conversionFactor,this);
     }
 
     @Override

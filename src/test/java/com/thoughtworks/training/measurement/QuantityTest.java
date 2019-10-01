@@ -3,8 +3,11 @@ package com.thoughtworks.training.measurement;
 import com.thoughtworks.training.measurement.length.Foot;
 import com.thoughtworks.training.measurement.length.Inch;
 import com.thoughtworks.training.measurement.length.Yard;
+import com.thoughtworks.training.measurement.temprature.Celsius;
 import com.thoughtworks.training.measurement.volume.Gallon;
 import com.thoughtworks.training.measurement.volume.Liter;
+import com.thoughtworks.training.measurement.wieght.Gram;
+import com.thoughtworks.training.measurement.wieght.KiloGram;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
@@ -430,4 +433,12 @@ public class QuantityTest {
         assertEquals(new Quantity(1001,new Gram()),oneKiloGram.add(oneGram));
     }
 
+    //Test cases for Temperature
+    @Test
+    void givenZeroCelsiusAndZeroCelsius_WhenEquals_ThenShouldBeEqual() {
+        Quantity zeroCelsius = new Quantity(0, new Celsius());
+        Quantity anotherZeroCelsius = new Quantity(0, new Celsius());
+
+        assertTrue(zeroCelsius.equals(anotherZeroCelsius));
+    }
 }

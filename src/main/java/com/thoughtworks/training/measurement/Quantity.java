@@ -17,10 +17,10 @@ public class Quantity {
 
         if (other instanceof Quantity) {
             Quantity that = (Quantity) other;
-            Quantity myBase=unit.conversionToBase(value);
-            Quantity otherBase=that.unit.conversionToBase(that.value);
+            Quantity myBase = unit.conversionToBase(value);
+            Quantity otherBase = that.unit.conversionToBase(that.value);
 
-            return myBase.unit.equals(otherBase.unit) && myBase.value == otherBase.value ;
+            return myBase.unit.equals(otherBase.unit) && myBase.value == otherBase.value;
         }
         return false;
     }
@@ -28,10 +28,10 @@ public class Quantity {
 
     public Quantity add(Quantity that) {
 
-        Quantity myBase=unit.conversionToBase(value);
-        Quantity otherBase=that.unit.conversionToBase(that.value);
+        Quantity myBase = unit.conversionToBase(value);
+        Quantity otherBase = that.unit.conversionToBase(that.value);
         if (myBase.unit.equals(otherBase.unit))
-            return new Quantity(myBase.value + otherBase.value,myBase.unit);
+            return new Quantity(myBase.value + otherBase.value, myBase.unit);
 
         throw new IllegalArgumentException("");
     }

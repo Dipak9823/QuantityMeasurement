@@ -2,7 +2,6 @@ package com.thoughtworks.training.measurement.temprature;
 
 import com.thoughtworks.training.measurement.Quantity;
 import com.thoughtworks.training.measurement.Unit;
-import com.thoughtworks.training.measurement.wieght.Gram;
 
 public class Celsius implements Unit {
     private final double conversionFactor = 1;

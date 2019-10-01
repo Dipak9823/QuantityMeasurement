@@ -26,7 +26,7 @@ public class Quantity {
     }
 
 
-    public Quantity add(Quantity that) {
+     public Quantity add(Quantity that) {
 
         Quantity myBase = unit.conversionToBase(value);
         Quantity otherBase = that.unit.conversionToBase(that.value);

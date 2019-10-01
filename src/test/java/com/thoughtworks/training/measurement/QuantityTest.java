@@ -4,6 +4,7 @@ import com.thoughtworks.training.measurement.length.Foot;
 import com.thoughtworks.training.measurement.length.Inch;
 import com.thoughtworks.training.measurement.length.Yard;
 import com.thoughtworks.training.measurement.temprature.Celsius;
+import com.thoughtworks.training.measurement.temprature.Fahrenheit;
 import com.thoughtworks.training.measurement.volume.Gallon;
 import com.thoughtworks.training.measurement.volume.Liter;
 import com.thoughtworks.training.measurement.wieght.Gram;
@@ -457,4 +458,13 @@ public class QuantityTest {
 
         assertFalse(oneCelsius.equals(twoCelsius));
     }
+
+    @Test
+    void givenZeroFahrenheitAndZeroFahrenheit_WhenEquals_ThenShouldBeEqual() {
+        Quantity zeroFahrenheit = new Quantity(0, new Fahrenheit());
+        Quantity anotherZeroFahrenheit = new Quantity(0, new Fahrenheit());
+
+        assertTrue(zeroFahrenheit.equals(anotherZeroFahrenheit));
+    }
+
 }

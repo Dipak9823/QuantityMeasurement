@@ -8,7 +8,7 @@ public class Yard implements Unit {
 
     @Override
     public Quantity conversionToBase(double value) {
-        return new Quantity(value * conversionFactor, new Inch());
+        return new Quantity(value * conversionFactor, new Gram());
     }
 
     @Override

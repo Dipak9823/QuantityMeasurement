@@ -1,7 +1,7 @@
 package com.thoughtworks.training.measurement;
 
 import com.thoughtworks.training.measurement.length.Foot;
-import com.thoughtworks.training.measurement.length.Inch;
+import com.thoughtworks.training.measurement.length.Gram;
 import com.thoughtworks.training.measurement.length.Yard;
 import com.thoughtworks.training.measurement.volume.Gallon;
 import com.thoughtworks.training.measurement.volume.Liter;
@@ -58,15 +58,15 @@ public class QuantityTest {
 
     @Test
     void givenZeroInch_WhenCompare_ThenShouldBeEqual() {
-        Quantity zeroInch = new Quantity(0, new Inch());
-        Quantity anotherZeroInch = new Quantity(0, new Inch());
+        Quantity zeroInch = new Quantity(0, new Gram());
+        Quantity anotherZeroInch = new Quantity(0, new Gram());
 
         assertTrue(zeroInch.equals(anotherZeroInch));
     }
 
     @Test
     void givenZeroInchAndAnotherObject_WhenEquals_ThenShouldNotBeEqual() {
-        Quantity zeroInch = new Quantity(0, new Inch());
+        Quantity zeroInch = new Quantity(0, new Gram());
 
         assertFalse(zeroInch.equals(new Object()));
     }
@@ -83,8 +83,8 @@ public class QuantityTest {
     @Test
     void givenOneInchAndTwoInch_WhenEquals_ThenShouldNotBeEqual() {
 
-        Quantity oneInch = new Quantity(1, new Inch());
-        Quantity twoInch = new Quantity(2, new Inch());
+        Quantity oneInch = new Quantity(1, new Gram());
+        Quantity twoInch = new Quantity(2, new Gram());
 
         assertFalse(oneInch.equals(twoInch));
     }
@@ -92,7 +92,7 @@ public class QuantityTest {
     @Test
     void givenOneInchAndNull_WhenEquals_ThenShouldNotBeEqual() {
 
-        Quantity oneInch = new Quantity(1, new Inch());
+        Quantity oneInch = new Quantity(1, new Gram());
         Quantity twoInch = null;
 
         assertFalse(oneInch.equals(twoInch));
@@ -100,7 +100,7 @@ public class QuantityTest {
 
     @Test
     void givenOneInchOneFoot_WhenEquals_ThenShouldNotBeEqual() {
-        Quantity oneInch = new Quantity(1, new Inch());
+        Quantity oneInch = new Quantity(1, new Gram());
         Quantity oneFoot = new Quantity(1, new Foot());
 
         assertFalse(oneFoot.equals(oneInch));
@@ -108,7 +108,7 @@ public class QuantityTest {
 
     @Test
     void givenZeroInchZeroFoot_WhenEquals_ThenShouldBeEqual() {
-        Quantity zeroInch = new Quantity(0, new Inch());
+        Quantity zeroInch = new Quantity(0, new Gram());
         Quantity zeroFoot = new Quantity(0, new Foot());
 
         assertTrue(zeroFoot.equals(zeroInch));
@@ -116,7 +116,7 @@ public class QuantityTest {
 
     @Test
     void givenOneInchThreeFoot_WhenEquals_ThenShouldBeEqual() {
-        Quantity twelveInch = new Quantity(12, new Inch());
+        Quantity twelveInch = new Quantity(12, new Gram());
         Quantity oneFoot = new Quantity(1, new Foot());
 
         assertTrue(oneFoot.equals(twelveInch));
@@ -124,7 +124,7 @@ public class QuantityTest {
 
     @Test
     void givenTwoFeetAndTwentyFourInch_WhenEquals_ThenShouldBeEqual() {
-        Quantity twentyFourInch = new Quantity(24, new Inch());
+        Quantity twentyFourInch = new Quantity(24, new Gram());
         Quantity twoFeet = new Quantity(2, new Foot());
 
         assertTrue(twoFeet.equals(twentyFourInch));
@@ -132,7 +132,7 @@ public class QuantityTest {
 
     @Test
     void givenOneFeetAndTwelveInch_WhenEquals_ThenShouldBeEqual() {
-        Quantity twelveInch = new Quantity(12, new Inch());
+        Quantity twelveInch = new Quantity(12, new Gram());
         Quantity oneFoot = new Quantity(1, new Foot());
 
         assertTrue(twelveInch.equals(oneFoot));
@@ -167,24 +167,24 @@ public class QuantityTest {
 
     @Test
     void givenZeroInchAndZeroInch_WhenAdd_ThenShouldBeZero() {
-        Quantity zeroInch = new Quantity(0, new Inch());
+        Quantity zeroInch = new Quantity(0, new Gram());
 
-        assertEquals(new Quantity(0, new Inch()), zeroInch.add(zeroInch));
+        assertEquals(new Quantity(0, new Gram()), zeroInch.add(zeroInch));
     }
 
     @Test
     void givenOneInchAndZeroInch_WhenAdd_ThenShouldBeOne() {
-        Quantity zeroInch = new Quantity(0, new Inch());
-        Quantity oneInch = new Quantity(1, new Inch());
+        Quantity zeroInch = new Quantity(0, new Gram());
+        Quantity oneInch = new Quantity(1, new Gram());
 
-        assertEquals(new Quantity(1, new Inch()), zeroInch.add(oneInch));
+        assertEquals(new Quantity(1, new Gram()), zeroInch.add(oneInch));
     }
 
     @Test
     void givenTwoInchAndTwoInch_WhenAdd_ThenShouldBeFour() {
-        Quantity twoInches = new Quantity(2, new Inch());
+        Quantity twoInches = new Quantity(2, new Gram());
 
-        assertEquals(new Quantity(4, new Inch()), twoInches.add(twoInches));
+        assertEquals(new Quantity(4, new Gram()), twoInches.add(twoInches));
     }
 
     @Test
@@ -204,17 +204,17 @@ public class QuantityTest {
     @Test
     void givenOneFootAndTwoInches_WhenAdd_ThenShouldBeFourteenInches() {
         Quantity oneFoot = new Quantity(1, new Foot());
-        Quantity twoInches = new Quantity(2, new Inch());
+        Quantity twoInches = new Quantity(2, new Gram());
 
-        assertEquals(new Quantity(14, new Inch()), oneFoot.add(twoInches));
+        assertEquals(new Quantity(14, new Gram()), oneFoot.add(twoInches));
     }
 
     @Test
     void givenTwoInchesAndOneFoot_WhenAdd_ThenShouldBeFourteenInches() {
         Quantity oneFoot = new Quantity(1, new Foot());
-        Quantity twoInches = new Quantity(2, new Inch());
+        Quantity twoInches = new Quantity(2, new Gram());
 
-        assertEquals(new Quantity(14, new Inch()), twoInches.add(oneFoot));
+        assertEquals(new Quantity(14, new Gram()), twoInches.add(oneFoot));
     }
 
     @Test
@@ -262,7 +262,7 @@ public class QuantityTest {
 
     @Test
     void givenOneInchAndOneLiter_WhenAdd_ThenShouldThrowIllegalArgumentException() {
-        Quantity oneInch = new Quantity(1, new Inch());
+        Quantity oneInch = new Quantity(1, new Gram());
         Quantity oneLiter = new Quantity(1, new Liter());
 
         assertThrows(IllegalArgumentException.class, () -> {
@@ -272,7 +272,7 @@ public class QuantityTest {
 
     @Test
     void givenOneInchAndOneGallon_WhenAdd_ThenShouldThrowIllegalArgumentException() {
-        Quantity oneInch = new Quantity(1, new Inch());
+        Quantity oneInch = new Quantity(1, new Gram());
         Quantity oneGallon = new Quantity(1, new Gallon());
 
         assertThrows(IllegalArgumentException.class, () -> {
@@ -302,7 +302,7 @@ public class QuantityTest {
 
     @Test
     void givenOneInchAndOneLiter_WhenEquals_ThenShouldThrowIllegalArgumentException() {
-        Quantity oneInch = new Quantity(1, new Inch());
+        Quantity oneInch = new Quantity(1, new Gram());
         Quantity oneLiter = new Quantity(1, new Liter());
 
         assertFalse(oneInch.equals(oneLiter));
@@ -310,8 +310,8 @@ public class QuantityTest {
 
     @Test
     void givenZeroGramAndZeroGram_WhenEquals_ThenShouldBeEqual() {
-        Quantity zeroGram = new Quantity(0, new Gram());
-        Quantity anotherZeroGram = new Quantity(0, new Gram());
+        Quantity zeroGram = new Quantity(0, new com.thoughtworks.training.measurement.Gram());
+        Quantity anotherZeroGram = new Quantity(0, new com.thoughtworks.training.measurement.Gram());
 
         assertTrue(zeroGram.equals(anotherZeroGram));
     }
@@ -319,7 +319,7 @@ public class QuantityTest {
     @Test
     void givenZeroGramAndAnotherObject_WhenEquals_ThenShouldNotBeEqual() {
 
-        Quantity zeroGram = new Quantity(0, new Gram());
+        Quantity zeroGram = new Quantity(0, new com.thoughtworks.training.measurement.Gram());
 
         assertFalse(zeroGram.equals(new Object()));
     }
@@ -327,8 +327,8 @@ public class QuantityTest {
     @Test
     void givenOneGramAndOneGram_WhenEquals_ThenShouldBeEqual() {
 
-        Quantity oneGram = new Quantity(1.0, new Gram());
-        Quantity otherOneGram = new Quantity(1.0, new Gram());
+        Quantity oneGram = new Quantity(1.0, new com.thoughtworks.training.measurement.Gram());
+        Quantity otherOneGram = new Quantity(1.0, new com.thoughtworks.training.measurement.Gram());
 
         assertTrue(oneGram.equals(otherOneGram));
     }
@@ -336,7 +336,7 @@ public class QuantityTest {
     @Test
     void givenOneGramAndNull_WhenEquals_ThenShouldNotBeEqual() {
 
-        Quantity oneFoot = new Quantity(1, new Gram());
+        Quantity oneFoot = new Quantity(1, new com.thoughtworks.training.measurement.Gram());
         Quantity twoFoot = null;
 
         assertFalse(oneFoot.equals(twoFoot));
@@ -376,4 +376,10 @@ public class QuantityTest {
         assertTrue(oneKiloGram.equals(twoKiloGram));
     }
 
+    @Test
+    void givenZeroGramAndZeroGram_WhenAdd_ThenShouldBeZero() {
+        Quantity zeroGram = new Quantity(0, new Gram());
+
+        assertEquals(new Quantity(0, new Gram()), zeroGram.add(zeroGram));
+    }
 }

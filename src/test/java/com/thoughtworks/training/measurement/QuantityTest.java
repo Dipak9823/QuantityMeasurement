@@ -311,7 +311,7 @@ public class QuantityTest {
     @Test
     void givenZeroGramAndZeroGram_WhenEquals_ThenShouldBeEqual() {
         Quantity zeroGram = new Quantity(0, new Gram());
-        Quantity anotherZeroGram=new Quantity(0,new Gram());
+        Quantity anotherZeroGram = new Quantity(0, new Gram());
 
         assertTrue(zeroGram.equals(anotherZeroGram));
     }
@@ -341,4 +341,30 @@ public class QuantityTest {
 
         assertFalse(oneFoot.equals(twoFoot));
     }
+
+    @Test
+    void givenZeroKiloGramAndZeroKiloGram_WhenEquals_ThenShouldBeEqual() {
+        Quantity zeroGram = new Quantity(0, new KiloGram());
+        Quantity anotherZeroGram = new Quantity(0, new KiloGram());
+
+        assertTrue(zeroGram.equals(anotherZeroGram));
+    }
+
+    @Test
+    void givenZeroKiloGramAndAnotherObject_WhenEquals_ThenShouldNotBeEqual() {
+
+        Quantity zeroKiloGram = new Quantity(0, new KiloGram());
+
+        assertFalse(zeroKiloGram.equals(new Object()));
+    }
+
+    @Test
+    void givenOneKiloGramtAndTwoKilogram_WhenEquals_ThenShouldNotBeEqual() {
+
+        Quantity oneKiloGram = new Quantity(1, new KiloGram());
+        Quantity twoKiloGram = new Quantity(2, new KiloGram());
+
+        assertFalse(oneKiloGram.equals(twoKiloGram));
+    }
+
 }

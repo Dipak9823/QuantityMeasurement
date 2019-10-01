@@ -4,7 +4,7 @@ import com.thoughtworks.training.measurement.Quantity;
 import com.thoughtworks.training.measurement.Unit;
 
 public class Foot implements Unit {
-    private final double conversionFactor=12;
+    private final double conversionFactor = 12;
 
     @Override
     public Quantity conversionToBase(double value) {

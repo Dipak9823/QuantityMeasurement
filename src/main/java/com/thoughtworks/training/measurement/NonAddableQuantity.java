@@ -1,10 +1,10 @@
 package com.thoughtworks.training.measurement;
 
 public class NonAddableQuantity {
-    private final double value;
-    private final NonAddableUnit unit;
+    protected final double value;
+    protected final Unit unit;
 
-    public NonAddableQuantity(double value, NonAddableUnit unit) {
+    public NonAddableQuantity(double value, Unit unit) {
         this.value = value;
         this.unit = unit;
     }
@@ -22,6 +22,8 @@ public class NonAddableQuantity {
 
             return myBase.unit.equals(otherBase.unit) && myBase.value == otherBase.value;
         }
+
+
         return false;
     }
 }

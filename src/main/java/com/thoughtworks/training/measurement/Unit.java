@@ -1,5 +1,5 @@
 package com.thoughtworks.training.measurement;
 
-public interface NonAddableUnit {
+public interface Unit {
     public NonAddableQuantity conversionToBase(double value);
 }

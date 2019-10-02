@@ -1,9 +1,9 @@
 package com.thoughtworks.training.measurement.wieght;
 
 import com.thoughtworks.training.measurement.AddableQuantity;
-import com.thoughtworks.training.measurement.AddableUnit;
+import com.thoughtworks.training.measurement.Unit;
 
-public class KiloGram implements AddableUnit {
+public class KiloGram implements Unit {
     private final double conversionFactor = 1000;
 
     @Override

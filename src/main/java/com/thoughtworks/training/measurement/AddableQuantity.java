@@ -1,35 +1,22 @@
 package com.thoughtworks.training.measurement;
 
-public class AddableQuantity {
-    private final double value;
-    private final AddableUnit unit;
+import com.thoughtworks.training.measurement.wieght.Gram;
 
-    public AddableQuantity(double value, AddableUnit unit) {
+public class AddableQuantity extends NonAddableQuantity {
+    private final double value;
+    private final Unit unit;
+
+    public AddableQuantity(double value, Unit unit) {
+        super(value, (Unit) unit);
         this.value = value;
         this.unit = unit;
-    }
-
-    @Override
-    public boolean equals(Object other) {
-        if (this == other) {
-            return true;
-        }
-
-        if (other instanceof AddableQuantity) {
-            AddableQuantity that = (AddableQuantity) other;
-            AddableQuantity myBase = unit.conversionToBase(value);
-            AddableQuantity otherBase = that.unit.conversionToBase(that.value);
-
-            return myBase.unit.equals(otherBase.unit) && myBase.value == otherBase.value;
-        }
-        return false;
     }
 
 
     public AddableQuantity add(AddableQuantity that) {
 
-        AddableQuantity myBase = unit.conversionToBase(value);
-        AddableQuantity otherBase = that.unit.conversionToBase(that.value);
+        AddableQuantity myBase = (AddableQuantity) unit.conversionToBase(value);
+        AddableQuantity otherBase = (AddableQuantity) that.unit.conversionToBase(that.value);
         if (myBase.unit.equals(otherBase.unit))
             return new AddableQuantity(myBase.value + otherBase.value, myBase.unit);
 

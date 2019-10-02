@@ -1,9 +1,9 @@
 package com.thoughtworks.training.measurement.volume;
 
 import com.thoughtworks.training.measurement.AddableQuantity;
-import com.thoughtworks.training.measurement.AddableUnit;
+import com.thoughtworks.training.measurement.Unit;
 
-public class Gallon implements AddableUnit {
+public class Gallon implements Unit {
     private final double conversionFactor=3.78;
 
     @Override

@@ -1,10 +1,9 @@
 package com.thoughtworks.training.measurement.temprature;
 
-import com.thoughtworks.training.measurement.AddableQuantity;
 import com.thoughtworks.training.measurement.NonAddableQuantity;
-import com.thoughtworks.training.measurement.NonAddableUnit;
+import com.thoughtworks.training.measurement.Unit;
 
-public class Celsius implements NonAddableUnit {
+public class Celsius implements Unit {
     private final double conversionFactor = 1;
 
 

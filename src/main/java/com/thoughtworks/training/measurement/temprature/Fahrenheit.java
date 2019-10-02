@@ -1,9 +1,9 @@
 package com.thoughtworks.training.measurement.temprature;
 
 import com.thoughtworks.training.measurement.NonAddableQuantity;
-import com.thoughtworks.training.measurement.NonAddableUnit;
+import com.thoughtworks.training.measurement.Unit;
 
-public class Fahrenheit implements NonAddableUnit {
+public class Fahrenheit implements Unit {
 
     @Override
     public NonAddableQuantity conversionToBase(double value) {

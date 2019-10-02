@@ -1,6 +1,6 @@
 package com.thoughtworks.training.measurement.temprature;
 
-import com.thoughtworks.training.measurement.NonAddableQuantity;
+import com.thoughtworks.training.measurement.EquitableQuantity;
 import com.thoughtworks.training.measurement.Unit;
 
 public class Celsius implements Unit {
@@ -8,8 +8,8 @@ public class Celsius implements Unit {
 
 
     @Override
-    public NonAddableQuantity conversionToBase(double value) {
-        return new NonAddableQuantity(value * conversionFactor, new Celsius());
+    public EquitableQuantity conversionToBase(double value) {
+        return new EquitableQuantity(value * conversionFactor, new Celsius());
     }
 
     @Override

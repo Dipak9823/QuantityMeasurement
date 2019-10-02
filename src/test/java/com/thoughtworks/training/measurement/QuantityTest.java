@@ -437,56 +437,56 @@ public class QuantityTest {
     //Test cases for Temperature
     @Test
     void givenZeroCelsiusAndZeroCelsius_WhenEquals_ThenShouldBeEqual() {
-        NonAddableQuantity zeroCelsius = new NonAddableQuantity(0, new Celsius());
-        NonAddableQuantity anotherZeroCelsius = new NonAddableQuantity(0, new Celsius());
+        EquitableQuantity zeroCelsius = new EquitableQuantity(0, new Celsius());
+        EquitableQuantity anotherZeroCelsius = new EquitableQuantity(0, new Celsius());
 
         assertTrue(zeroCelsius.equals(anotherZeroCelsius));
     }
 
     @Test
     void givenOneCelsiusAndOneCelsius_WhenEquals_ThenShouldBeEqual() {
-        NonAddableQuantity oneCelsius = new NonAddableQuantity(1, new Celsius());
-        NonAddableQuantity anotherOneCelsius = new NonAddableQuantity(1, new Celsius());
+        EquitableQuantity oneCelsius = new EquitableQuantity(1, new Celsius());
+        EquitableQuantity anotherOneCelsius = new EquitableQuantity(1, new Celsius());
 
         assertTrue(oneCelsius.equals(anotherOneCelsius));
     }
 
     @Test
     void givenOneCelsiusAndTwoCelsius_WhenEquals_ThenShouldNotBeEqual() {
-        NonAddableQuantity oneCelsius = new NonAddableQuantity(1, new Celsius());
-        NonAddableQuantity twoCelsius = new NonAddableQuantity(2, new Celsius());
+        EquitableQuantity oneCelsius = new EquitableQuantity(1, new Celsius());
+        EquitableQuantity twoCelsius = new EquitableQuantity(2, new Celsius());
 
         assertFalse(oneCelsius.equals(twoCelsius));
     }
 
     @Test
     void givenZeroFahrenheitAndZeroFahrenheit_WhenEquals_ThenShouldBeEqual() {
-        NonAddableQuantity zeroFahrenheit = new NonAddableQuantity(0, new Fahrenheit());
-        NonAddableQuantity anotherZeroFahrenheit = new NonAddableQuantity(0, new Fahrenheit());
+        EquitableQuantity zeroFahrenheit = new EquitableQuantity(0, new Fahrenheit());
+        EquitableQuantity anotherZeroFahrenheit = new EquitableQuantity(0, new Fahrenheit());
 
         assertTrue(zeroFahrenheit.equals(anotherZeroFahrenheit));
     }
 
     @Test
     void givenOneFahrenheitAndOneFahrenheit_WhenEquals_ThenShouldBeEqual() {
-        NonAddableQuantity oneFahrenheit = new NonAddableQuantity(1, new Fahrenheit());
-        NonAddableQuantity anotherOneFahrenheit = new NonAddableQuantity(1, new Fahrenheit());
+        EquitableQuantity oneFahrenheit = new EquitableQuantity(1, new Fahrenheit());
+        EquitableQuantity anotherOneFahrenheit = new EquitableQuantity(1, new Fahrenheit());
 
         assertTrue(oneFahrenheit.equals(anotherOneFahrenheit));
     }
 
     @Test
     void givenOneFahrenheitAndTwoFahrenheit_WhenEquals_ThenShouldBeEqual() {
-        NonAddableQuantity oneFahrenheit = new NonAddableQuantity(1, new Fahrenheit());
-        NonAddableQuantity twoFahrenheit = new NonAddableQuantity(2, new Fahrenheit());
+        EquitableQuantity oneFahrenheit = new EquitableQuantity(1, new Fahrenheit());
+        EquitableQuantity twoFahrenheit = new EquitableQuantity(2, new Fahrenheit());
 
         assertFalse(oneFahrenheit.equals(twoFahrenheit));
     }
 
     @Test
     void givenOneFahrenheitAndTwoFahrenheit_WhenAdds_ThenShouldBeEqual() {
-        NonAddableQuantity oneFahrenheit = new NonAddableQuantity(1, new Fahrenheit());
-        NonAddableQuantity twoFahrenheit = new NonAddableQuantity(2, new Fahrenheit());
+        EquitableQuantity oneFahrenheit = new EquitableQuantity(1, new Fahrenheit());
+        EquitableQuantity twoFahrenheit = new EquitableQuantity(2, new Fahrenheit());
 
         //assertEquals(new NonAddableQuantity(3,new Fahrenheit()),oneFahrenheit.add(twoFahrenheit));
     }

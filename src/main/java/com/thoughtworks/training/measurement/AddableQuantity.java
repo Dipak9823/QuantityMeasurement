@@ -1,13 +1,11 @@
 package com.thoughtworks.training.measurement;
 
-import com.thoughtworks.training.measurement.wieght.Gram;
-
-public class AddableQuantity extends NonAddableQuantity {
+public class AddableQuantity extends EquitableQuantity {
     private final double value;
     private final Unit unit;
 
     public AddableQuantity(double value, Unit unit) {
-        super(value, (Unit) unit);
+        super(value, unit);
         this.value = value;
         this.unit = unit;
     }
